@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Alvaro Castillo">
+    <meta name="description" content="Consolidacion modulo 2">
+    <!-- Favicon -->
+    <link rel="icon" href="assets/img/favicon.png" sizes="16x16" type="image/png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/cf5bc6826a.js" crossorigin="anonymous"></script>
+    <!-- Css propio -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <title>Programador Freelance</title>
+</head>
+
+<body>
+    <header>
+        <!-- barra de navegacion -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#"><img class="logo" src="assets/img/logo.svg" alt="Logo">Programador Freelance</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ir a inicio">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#quien" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Historia y habilidades">Sobre mi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#destacados" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ve mis trabajos destacados">Destacados</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Contactame">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Carousel -->
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active carousel-h">
+                    <img src="assets/img/carousel1.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item carousel-h">
+                    <img src="assets/img/carousel2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item carousel-h">
+                    <img src="assets/img/carousel3.webp" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item carousel-h">
+                    <img src="assets/img/carousel4.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+    </header>
+
+    <!-- Seccion Quienes somos -->
+    <section class="bg-black text-center p-5" id="quien">
+        <h2>Sobre mi persona</h2>
+        <hr>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <span class="icono"><i class="fa-solid fa-code fa-2x"></i></span>
+                    <p class="text-start">Antiguamente bioquimico y maestro pizzero. Aprendi de manera autodidacta a programar para ayudarme con los calculos de fermentacion de masas y encontre pasion en el codigo. Desde entonces en cada momento que tengo libre, me dedico a estudiar mas sobre programacion</p>
+                </div>
+                <div class="col">
+                    <p class="text-start">Certificado en: </br>PROGRAMACIÓN DE SOFTWARE en DUOC UC</br>ANÁLISIS Y PLANIFICACIÓN DE REQUERIMIENTOS INFORMÁTICOS en DUOC UC</br>ANÁLISIS Y DESARROLLO DE MODELOS DE DATOS en DUOC UC</br>ARQUITECTURA DE SOFTWARE en DUOC UC</br>CALIDAD DE SOFTWARE en DUOC UC</br>Ingles C1 en British Council</p>
+                    <span class="icono"><i class="fa-solid fa-keyboard fa-2x"></i></span>
+                </div>
+                <div class="col">
+                    <span class="icono"><i class="fa-solid fa-laptop-code fa-2x"></i></span>
+                    <p class="text-start">Siempre dispuesto a aprender mas y flexible en horarios, contactame y hablemos sobre tu proyecto</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seccion Destacados -->
+    <section class="bg-black text-center p-5" id="destacados">
+        <h2>Destacados</h2>
+        <hr>
+        <div class="card-group">
+            <div class="card bg-carta mx-2" style="width: 18rem;">
+                <img src="assets/img/card1.jpg" class="card-img-top imagen-carta mx-auto" alt="card1">
+                <div class="card-body">
+                    <a class="card-title font-carta" href="#">RentApart </a>
+                    <p class="card-text text-start py-3">Aplicacion web hotelera desarrollada utilizando el framework Django de Python, permite la administracion completa de un hotel, sus habitaciones, empleados e insumos. Tambien permite a los usuarios el reservar habitaciones de manera intuitiva.</p>
+                </div>
+            </div>
+            <div class="card bg-carta mx-2" style="width: 18rem;">
+                <img src="assets/img/card2.jpg" class="card-img-top imagen-carta mx-auto" alt="card2">
+                <div class="card-body">
+                    <a class="card-title font-carta" href="#">BabyTracker </a>
+                    <p class="card-text text-start py-3">Aplicacion Android desarrollada en Kotlin para mi hijo, cuenta y organiza por fecha y hora las veces que el bebé es alimentado, cambiado de pañal o toma una siesta. Para asi facilitar las visitas a pediatra.</p>
+                </div>
+            </div>
+            <div class="card bg-carta mx-2" style="width: 18rem;">
+                <img src="assets/img/card3.jpg" class="card-img-top imagen-carta mx-auto" alt="card3">
+                <div class="card-body">
+                    <a class="card-title font-carta" href="#">MyTvList </a>
+                    <p class="card-text text-start py-3">Aplicacion movil desarrollada utilizado el fraework Ionic,permite crear listas de series de tv para asi poder llevar la cuenta de en que capitulo de que temporada se encuentra actualmente viendo, permite opinar y calificar tanto series como capitulos y que otros usuarios reaccionen a esas opiniones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- seccion Contacto -->
+    <section class="bg-black text-center p-5" id="contact">
+        <h2>Contacto</h2>
+        <hr>
+        <div class="mb-3">
+            <label for="asunto" class="form-label float-start">Asunto</label>
+            <input type="text" class="form-control" id="asunto">
+        </div>
+        <div class="mb-3">
+            <label for="correo" class="form-label float-start">Correo</label>
+            <input type="email" class="form-control" id="correo">
+        </div>
+        <div class="mb-3">
+            <label for="contenido" class="form-label float-start">Mensaje</label>
+            <textarea class="form-control" id="contenido" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-info text-white mb-3 float-start" id="btn_enviar">Enviar</button>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-carta text-center text-white">
+        <div class="row py-3">
+            <div class="col">
+                <h3 class="fw-lighter">Alvaro Castillo</h3>
+            </div>
+            <div class="col">
+                <i class="fa-brands fa-github fa-2x px-2"></i>
+                <i class="fa-brands fa-linkedin fa-2x px-2"></i>
+                <i class="fa-brands fa-twitter-square fa-2x px-2"></i>
+                <i class="fa-brands fa-facebook-square fa-2x px-2"></i>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- JS Propio -->
+    <script src="assets/js/form.js"></script>
+    <script src="assets/js/tooltip.js"></script>
+</body>
+
+</html>
