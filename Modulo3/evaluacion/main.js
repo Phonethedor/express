@@ -1,18 +1,19 @@
-import { Producto } from "./producto.js";
-import { Carrito } from "./carrito.js";
+let id_producto = 1;
 
-const productos = [];
-productos.push(new Producto("Leche", 1000));
-productos.push(new Producto("Pan de Molde", 2000));
-productos.push(new Producto("Queso", 1200));
-productos.push(new Producto("Mermelada", 890));
-productos.push(new Producto("Azucar", 1300));
+const leche = new Producto("Leche", 1000);
+const pan = new Producto("Pan de Molde", 2000);
+const queso = new Producto("Queso", 1200);
+const mermelada = new Producto("Mermelada", 890);
+const azucar = new Producto("Azucar", 1300);
 
-const carrito = new Carrito(productos);
-console.log("test carrito")
-console.log(carrito);
+const carrito = new Carrito();
 let continuar = true;
 
+console.log(leche.id());
+console.log(pan.id());
+console.log(queso.id());
+console.log(mermelada.id());
+console.log(azucar.id());
 
 do {
         
@@ -20,24 +21,15 @@ do {
 
     let num_producto = prompt("Ingrese el número del producto que desea agregar al carrito");
 
-    if (num_producto != "1" || num_producto != "2" || num_producto != "3" || num_producto != "4" || num_producto != "5"){
-        alert("Ingrese un número de producto válido");
-    }else {
-        let unidades = prompt("Ingrese la cantidad de unidades que desea agregar al carrito");
+    switch (num_producto) {
+        case "1":
 
-        if (isNaN(unidades)){
-            alert("Ingrese un número válido");
-        } else {
-            let producto = productos[parseInt(num_producto) - 1];
-            carrito.agregarProducto(parseInt(unidades), producto.nombre, producto.precio);
-        }
     }
 
-    let string_continuar = prompt("Desea seguir agregando productos? (s/n)");
+    let string_continuar = prompt("Desea seguir agregando productos? (s/n)").toLowerCase();
 
-    if (string_continuar === "n"){
+    if (string_continuar === "n" || string_continuar === "no"){
         continuar = false;
-        console.log(continuar);
     } else if (string_continuar != "s" && string_continuar !="n"){
         alert("Ingrese opcion correcta");
     }
@@ -45,3 +37,56 @@ do {
 } while (continuar === true);
 
 alert("Gracias por su compra");
+
+//clases
+
+function Carrito(){
+    this.productos = [];
+
+    this.agregarProducto = function(producto){
+        this.productos.push(producto);
+    }
+
+}
+
+function Producto(nombre, precio){
+    this._id = id_producto++;
+    this._nombre = nombre;
+    this._precio = precio;
+    this._cantidad = 0;
+
+    //getters
+    this.id = function(){
+        return this._id;
+    }
+
+    this.nombre = function(){
+        return this._nombre;
+    }
+
+    this.precio = function(){
+        return this._precio;
+    }
+
+    this.cantidad = function(){
+        return this._cantidad;
+    }
+
+    //setters
+    this.setNombre = function(nombre){
+        this._nombre = nombre;
+    }
+
+    this.setPrecio = function(precio){
+        this._precio = precio;
+    }
+
+    this.setCantidad = function(cantidad){
+        this._cantidad = cantidad;
+    }
+
+    //funciones propias
+    this.calcularTotal = function(){
+        return this._precio * this._cantidad;
+    }
+}
