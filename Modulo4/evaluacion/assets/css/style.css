@@ -1,0 +1,65 @@
+.timeline {
+    position: relative;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #ddd;
+}
+
+.timeline-step {
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    height: 90px; /* Ajustar la altura de cada paso */
+}
+
+.timeline-step::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%; /* Centra verticalmente el punto */
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: #ffc107;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.circle-red {
+    background-color: #f76c6c;
+}
+
+.circle-green {
+    background-color: #62d96b;
+}
+
+.circle-blue {
+    background-color: #5ca9fb;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 15px; /* Ajusta la separación de las tarjetas con la línea de tiempo */
+    padding: 20px;
+    width: 90%; /* Ajusta el ancho de las tarjetas */
+}
