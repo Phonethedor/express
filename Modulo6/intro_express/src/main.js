@@ -6,6 +6,12 @@ const app = express();
 const PORT = 3000;
 
 // Middleware son funciones que se ejecutan antes de llegar a las rutas y posterior  la peticion
+//entre request y el  response
+// Middleware para parsear JSON y datos URL-encoded
+app.use(express.json());
+// Middleware para codificar una request multiformato
+app.use(express.urlencoded({ extended: true }));
+//primero van los de parseo y luego los de rutas
 app.use('/', router);
 
 app.listen(PORT, () => {
