@@ -1,0 +1,22 @@
+{
+  "name": "evaluacion",
+  "version": "1.0.0",
+  "description": "Evaluacion modulo 6 TD - CRUD Anime",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "animetest"
+  },
+  "keywords": [
+    "Express",
+    "Node",
+    "Anime",
+    "Talento",
+    "Digital"
+  ],
+  "author": "Alvaro Castillo Muñoz",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
