@@ -16,7 +16,32 @@ export const readFile = async () => {
     }
 }
 
+// Metodos GET
+
 export const getAllData = async() => {
-    const data = await readFile()
-    return data
+    const data = await readFile();
+    return data;
+}
+
+export const getAnimeById = async(id) => {
+    const data = await readFile();
+    const anime = data[id];
+    if (anime === undefined) {
+        throw new Error('No se encontró el anime')
+    } else {
+        return anime;
+    }
+}
+
+export const getAnimeByName = async(name) => {
+    const data = await readFile();
+    let id = 1;
+    while (data[id] != undefined) {
+        const anime = await getAnimeById(id);
+        if (anime.nombre === name) {
+            return anime;
+        }
+        id++;
+    }
+    return anime;
 }
