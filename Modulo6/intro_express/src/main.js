@@ -12,7 +12,7 @@ app.use(express.json());
 // Middleware para codificar una request multiformato
 app.use(express.urlencoded({ extended: true }));
 //primero van los de parseo y luego los de rutas
-app.use('/', router);
+app.use('/api/v1', router);
 
 app.listen(PORT, () => {
     console.log(`Servidor escuchando en http://localhost:${PORT}`);

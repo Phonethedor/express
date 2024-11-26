@@ -12,7 +12,7 @@ export const readFile = async () => {
         const data = await fs.readFile(dataFilePath, 'utf8');
         return JSON.parse(data);
     } catch (error) {
-        throw new Error(`No pudimos leer el archivo: ${error}`)
+        throw new Error(`No pudimos leer el archivo: ${error}`);
     }
 }
 
@@ -27,7 +27,7 @@ export const getAnimeById = async(id) => {
     const data = await readFile();
     const anime = data[id];
     if (anime === undefined) {
-        throw new Error('No se encontró el anime')
+        throw new Error('No se encontró el anime');
     } else {
         return anime;
     }
@@ -43,5 +43,35 @@ export const getAnimeByName = async(name) => {
         }
         id++;
     }
-    return anime;
+    throw new Error('No se encontró el anime');
+}
+
+// Metodos POST con body
+export const createAnime = async(data) => {
+    const allData = await readFile();
+    console.log(allData);
+    console.log(Object.keys(allData).length);
+    console.log(typeof allData);
+    const id = Object.keys(allData).length + 1;
+    allData[id] = data;
+    await fs.writeFile(dataFilePath, JSON.stringify(allData), 'utf8');
+    return data;
+}
+
+
+// Metodos PUT
+export const updateAnime = async(id, data) => {
+    const anime = await getAnimeById(id);
+    const newData = {...anime, ...data};
+    const allData = await readFile();
+    allData[id] = newData;
+    await fs.writeFile(dataFilePath, JSON.stringify(allData), 'utf8');
+    return newData;
+}
+
+// Metodos DELETE
+export const deleteAnime = async(id) => {
+    const allData = await readFile();
+    delete allData[id];
+    await fs.writeFile(dataFilePath, JSON.stringify(allData), 'utf8');
 }

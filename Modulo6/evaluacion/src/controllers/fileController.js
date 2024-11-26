@@ -1,4 +1,4 @@
-import { getAllData, getAnimeById, getAnimeByName } from "../services/services.js";
+import { getAllData, getAnimeById, getAnimeByName, createAnime, deleteAnime } from "../services/services.js";
 
 
 // Metodos GET
@@ -52,6 +52,51 @@ export const getItemByName = async(req, res) => {
     } catch (error) {
         res.status(404).json({
             message: 'No se encontró el anime es',
+            status: 404,
+            error
+        })
+    }
+}
+
+// Metodo POST
+export const createItem = async(req, res) => {
+    try {
+        const data = req.body;
+        const anime = await createAnime(data);
+
+        res.status(201).json({
+            message: 'Anime creado con éxito',
+            status: 201,
+            anime
+        })
+    } catch (error) {
+        res.status(400).json({
+            message: 'No se pudo crear el anime',
+            status: 400,
+            error
+        })
+    }
+}
+
+
+// Metodo PUT
+
+
+
+// Metodo DELETE
+export const deleteItem = async(req, res) => {
+    try {
+        const id = req.params.id;
+        const anime = await deleteAnime(id);
+
+        res.status(200).json({
+            message: 'Anime eliminado con éxito',
+            status: 200,
+            anime
+        })
+    } catch (error) {
+        res.status(404).json({
+            message: 'No se pudo eliminar el anime',
             status: 404,
             error
         })
