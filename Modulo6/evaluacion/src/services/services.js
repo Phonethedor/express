@@ -49,9 +49,6 @@ export const getAnimeByName = async(name) => {
 // Metodos POST con body
 export const createAnime = async(data) => {
     const allData = await readFile();
-    console.log(allData);
-    console.log(Object.keys(allData).length);
-    console.log(typeof allData);
     const id = Object.keys(allData).length + 1;
     allData[id] = data;
     await fs.writeFile(dataFilePath, JSON.stringify(allData), 'utf8');
@@ -60,6 +57,7 @@ export const createAnime = async(data) => {
 
 
 // Metodos PUT
+// TODO agregar validacion de que el id existe
 export const updateAnime = async(id, data) => {
     const anime = await getAnimeById(id);
     const newData = {...anime, ...data};
@@ -70,6 +68,7 @@ export const updateAnime = async(id, data) => {
 }
 
 // Metodos DELETE
+// TODO agregar validacion de que el id existe
 export const deleteAnime = async(id) => {
     const allData = await readFile();
     delete allData[id];

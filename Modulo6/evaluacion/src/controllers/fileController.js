@@ -1,4 +1,4 @@
-import { getAllData, getAnimeById, getAnimeByName, createAnime, deleteAnime } from "../services/services.js";
+import { getAllData, getAnimeById, getAnimeByName, createAnime, updateAnime , deleteAnime } from "../services/services.js";
 
 
 // Metodos GET
@@ -80,7 +80,25 @@ export const createItem = async(req, res) => {
 
 
 // Metodo PUT
+export const updateItem = async(req, res) => {
+    try {
+        const id = req.params.id;
+        const data = req.body;
+        const anime = await updateAnime(id, data);
 
+        res.status(200).json({
+            message: 'Anime actualizado con éxito',
+            status: 200,
+            anime
+        })
+    } catch (error) {
+        res.status(404).json({
+            message: 'No se pudo actualizar el anime',
+            status: 404,
+            error
+        })
+    }
+}
 
 
 // Metodo DELETE
