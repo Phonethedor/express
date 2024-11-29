@@ -6,6 +6,7 @@ describe('SERVER', () => {
     it('Deberia retornar respuesta 200', (done) => {
         request(app)
             .get('/')
+            .expect(200)
             .end((err, res) => {
                 expect(res.status).to.equal(404);
                 done();
