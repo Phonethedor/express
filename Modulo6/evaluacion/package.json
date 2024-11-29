@@ -2,11 +2,11 @@
   "name": "evaluacion",
   "version": "1.0.0",
   "description": "Evaluacion modulo 6 TD - CRUD Anime",
-  "main": "index.js",
+  "main": "./src/index.js",
   "type": "module",
   "scripts": {
-    "start": "node ./src/index.js",
-    "test": "animetest"
+    "start": "nodemon ./src/index.js",
+    "test": "mocha"
   },
   "keywords": [
     "Express",
@@ -21,7 +21,12 @@
     "express": "^4.21.1"
   },
   "devDependencies": {
+    "@types/chai-http": "^4.2.4",
+    "chai": "^5.1.2",
+    "chai-http": "^5.1.1",
     "install": "^0.13.0",
-    "nodemon": "^3.1.7"
+    "mocha": "^10.8.2",
+    "nodemon": "^3.1.7",
+    "supertest": "^7.0.0"
   }
 }
