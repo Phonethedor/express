@@ -63,20 +63,26 @@ export const createAnime = async(data) => {
 
 
 // Metodos PUT
-// TODO agregar validacion de que el id existe
 export const updateAnime = async(id, data) => {
     const anime = await getAnimeById(id);
+    if (anime === undefined) {
+        throw new Error('No se encontró el anime');
+    } else {
     const newData = {...anime, ...data};
     const allData = await readFile();
     allData[id] = newData;
     await fs.writeFile(dataFilePath, JSON.stringify(allData), 'utf8');
     return newData;
+    }
 }
 
 // Metodos DELETE
-// TODO agregar validacion de que el id existe
 export const deleteAnime = async(id) => {
     const allData = await readFile();
+    if (allData[id] === undefined) {
+        throw new Error('No se encontró el anime');
+    }else{
     delete allData[id];
     await fs.writeFile(dataFilePath, JSON.stringify(allData), 'utf8');
+    }
 }
