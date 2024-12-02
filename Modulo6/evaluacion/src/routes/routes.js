@@ -1,5 +1,12 @@
 import express from 'express'
-import { getAllItems, getItemById, getItemByName, createItem, updateItem , deleteItem } from '../controllers/fileController.js';
+import { 
+    getAllItems, 
+    getItemById, 
+    getItemByName, 
+    createItem, 
+    updateItem , 
+    deleteItem 
+    } from '../controllers/fileController.js';
 
 
 const router = express.Router();

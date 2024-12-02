@@ -50,9 +50,15 @@ export const getAnimeByName = async(name) => {
 export const createAnime = async(data) => {
     const allData = await readFile();
     const id = Object.keys(allData).length + 1;
-    allData[id] = data;
+    const anime = {
+        nombre: data.nombre,
+        genero: data.genero,
+        año: data.año,
+        autor: data.autor
+    }
+    allData[id] = anime;
     await fs.writeFile(dataFilePath, JSON.stringify(allData), 'utf8');
-    return data;
+    return anime;
 }
 
 

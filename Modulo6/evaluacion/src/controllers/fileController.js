@@ -1,4 +1,11 @@
-import { getAllData, getAnimeById, getAnimeByName, createAnime, updateAnime , deleteAnime } from "../services/services.js";
+import { 
+    getAllData, 
+    getAnimeById, 
+    getAnimeByName, 
+    createAnime, 
+    updateAnime , 
+    deleteAnime 
+    } from "../services/services.js";
 
 
 // Metodos GET
